@@ -50,6 +50,22 @@ public class ScheduleService {
             System.out.println("Wrong id");
             return null;
         }
-        return new ScheduleResponseDto(schedule);
+        return new ScheduleResponseDto(scheduleRepository.findById(id));
+    }
+
+    public Long deleteSchedule(Long id, String password) {
+        Schedule schedule = scheduleRepository.findById(id);
+        if(schedule != null){
+            if(password.equals(schedule.getPassword())){
+                scheduleRepository.delete(id);
+                return id;
+            }else{
+                //Wrong password!
+                return 0L;
+            }
+        }else{
+            //해당 하는 id 없는 경우
+            return -1L;
+        }
     }
 }

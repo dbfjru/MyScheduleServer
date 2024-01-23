@@ -86,4 +86,9 @@ public class ScheduleRepository {
         String sql = "UPDATE schedule SET title = ?, contents = ?, manager = ?, date = ? WHERE id = ?";
         jdbcTemplate.update(sql, scheduleRequestDto.getTitle(), scheduleRequestDto.getContents(), scheduleRequestDto.getManager(), scheduleRequestDto.getDate(),id);
     }
+
+    public void delete(Long id) {
+        String sql = "DELETE FROM schedule WHERE id = ?";
+        jdbcTemplate.update(sql,id);
+    }
 }
