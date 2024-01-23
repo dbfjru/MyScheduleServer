@@ -1,7 +1,9 @@
 package com.sparta.myscheduleapp.dto;
 
 import com.sparta.myscheduleapp.entity.Schedule;
+import lombok.Getter;
 
+@Getter
 public class ScheduleResponseDto {
     private Long id;
     private String title;

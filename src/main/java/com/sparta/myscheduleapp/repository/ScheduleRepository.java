@@ -27,9 +27,9 @@ public class ScheduleRepository {
 
                     preparedStatement.setString(1, schedule.getTitle());
                     preparedStatement.setString(2, schedule.getContents());
-                    preparedStatement.setString(2, schedule.getManager());
-                    preparedStatement.setString(2, schedule.getPassword());
-                    preparedStatement.setString(2, schedule.getDate());
+                    preparedStatement.setString(3, schedule.getManager());
+                    preparedStatement.setString(4, schedule.getPassword());
+                    preparedStatement.setString(5, schedule.getDate());
                     return preparedStatement;
                 },
                 keyHolder);
