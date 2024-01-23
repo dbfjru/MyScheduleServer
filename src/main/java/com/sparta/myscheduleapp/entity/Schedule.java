@@ -9,13 +9,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class Schedule {
     private Long id;
     private String title;
     private String contents;
     private String manager;
     private String password;
-    private String date;
+    private int date;
 
     public Schedule(ScheduleRequestDto scheduleRequestDto) {
         this.title = scheduleRequestDto.getTitle();
