@@ -11,7 +11,6 @@ public class ScheduleResponseDto {
     private String title;
     private String contents;
     private String manager;
-//    private String password; 비밀번호는 반환하지 않는다!
     private int date;
 
     public ScheduleResponseDto(Schedule schedule) {
@@ -19,7 +18,6 @@ public class ScheduleResponseDto {
         this.title = schedule.getTitle();
         this.contents = schedule.getContents();
         this.manager = schedule.getManager();
-//        this.password = schedule.getPassword();
         this.date = schedule.getDate();
     }
 

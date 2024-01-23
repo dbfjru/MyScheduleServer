@@ -2,7 +2,6 @@ package com.sparta.myscheduleapp.controller;
 
 import com.sparta.myscheduleapp.dto.ScheduleRequestDto;
 import com.sparta.myscheduleapp.dto.ScheduleResponseDto;
-import com.sparta.myscheduleapp.entity.Schedule;
 import com.sparta.myscheduleapp.service.ScheduleService;
 import org.springframework.web.bind.annotation.*;
 

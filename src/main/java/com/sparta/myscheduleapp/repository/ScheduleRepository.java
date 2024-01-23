@@ -3,7 +3,6 @@ package com.sparta.myscheduleapp.repository;
 import com.sparta.myscheduleapp.dto.ScheduleRequestDto;
 import com.sparta.myscheduleapp.dto.ScheduleResponseDto;
 import com.sparta.myscheduleapp.entity.Schedule;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
