@@ -1,5 +1,6 @@
 package com.sparta.myscheduleapp.repository;
 
+import com.sparta.myscheduleapp.dto.ScheduleRequestDto;
 import com.sparta.myscheduleapp.dto.ScheduleResponseDto;
 import com.sparta.myscheduleapp.entity.Schedule;
 import org.springframework.dao.DataAccessException;
@@ -79,5 +80,10 @@ public class ScheduleRepository {
                 return new ScheduleResponseDto(id,title,contents,manager,date);
             }
         });
+    }
+
+    public void update(Long id, ScheduleRequestDto scheduleRequestDto) {
+        String sql = "UPDATE schedule SET title = ?, contents = ?, manager = ?, date = ? WHERE id = ?";
+        jdbcTemplate.update(sql, scheduleRequestDto.getTitle(), scheduleRequestDto.getContents(), scheduleRequestDto.getManager(), scheduleRequestDto.getDate(),id);
     }
 }

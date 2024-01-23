@@ -36,4 +36,20 @@ public class ScheduleService {
 
         return scheduleRepository.findAll();
     }
+
+
+    public ScheduleResponseDto updateSchedule(Long id, ScheduleRequestDto scheduleRequestDto) {
+        Schedule schedule = scheduleRepository.findById(id);
+        if(schedule != null){
+            if(schedule.getPassword().equals(scheduleRequestDto.getPassword())){
+                scheduleRepository.update(id,scheduleRequestDto);
+            }else {
+                System.out.println("Wrong password");
+            }
+        }else {
+            System.out.println("Wrong id");
+            return null;
+        }
+        return new ScheduleResponseDto(schedule);
+    }
 }
